@@ -57,10 +57,10 @@
             margin-bottom: 15px;
         }
         .logo-img {
-            height: 75px;
+            height: 85px;  /* Logo thoda bada */
             width: auto;
             background: white;
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             transition: transform 0.3s;
@@ -69,8 +69,9 @@
             transform: scale(1.05);
         }
         .logo-text h2 {
-            font-size: 2.2rem;
-            letter-spacing: 2px;
+            font-size: 2.5rem;  /* बहुत बड़ा */
+            letter-spacing: 3px;
+            font-weight: 800;
         }
         .logo-text h2 span {
             display: inline-block;
@@ -96,7 +97,8 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.8rem;
-            margin-top: 5px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
         nav a {
             color: white;
@@ -117,6 +119,16 @@
             color: #1e3a5f;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        /* नई सिल्वर/गोल्डन लाइन */
+        .glowing-line {
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #e6b800, #c0c0c0, #e6b800, transparent);
+            margin: 0 auto 20px auto;
+            border-radius: 2px;
+            animation: gradientShift 3s ease infinite;
+            background-size: 200% 100%;
         }
         .hero {
             background: linear-gradient(135deg, #1e3a5f, #2c5282, #4a90e2, #94a3b8);
@@ -169,7 +181,6 @@
             background: transparent;
             border: 2px solid #38bdf8;
             color: #38bdf8;
-            margin-left: 1rem;
         }
         .btn:hover {
             background: #0ea5e9;
@@ -184,7 +195,6 @@
             background: #25D366;
             color: white;
             border: none;
-            margin-left: 1rem;
         }
         .whatsapp-btn:hover {
             background: #128C7E;
@@ -435,12 +445,17 @@
             font-size: 0.8rem;
             opacity: 0.9;
         }
+        /* नया Button Group - Ek Line Mein */
         .button-group {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+        }
+        .button-group .btn {
+            margin: 0;
         }
 
         /* ======================================== */
@@ -451,10 +466,10 @@
                 padding: 1rem;
             }
             .logo-img {
-                height: 55px;
+                height: 60px;
             }
             .logo-text h2 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
             .logo-text p {
                 font-size: 0.7rem;
@@ -463,6 +478,9 @@
                 font-size: 0.8rem;
                 padding: 6px 12px;
                 gap: 4px;
+            }
+            .glowing-line {
+                width: 90%;
             }
             .typing-text {
                 font-size: 1.3rem;
@@ -483,17 +501,9 @@
                 padding: 10px 20px;
                 font-size: 0.9rem;
             }
-            .btn-outline, .whatsapp-btn {
-                margin-left: 0;
-            }
             .button-group {
-                flex-direction: column;
-                align-items: center;
-            }
-            .button-group .btn {
-                width: 100%;
-                max-width: 280px;
-                margin: 5px 0;
+                flex-direction: row;
+                flex-wrap: wrap;
             }
             .section-title {
                 font-size: 1.6rem;
@@ -554,7 +564,7 @@
                 padding: 4px;
             }
             .logo-text h2 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             .logo-text p {
                 font-size: 0.6rem;
@@ -570,6 +580,9 @@
                 font-size: 0.7rem;
                 padding: 4px 8px;
                 gap: 3px;
+            }
+            .glowing-line {
+                width: 95%;
             }
             .typing-text {
                 font-size: 1rem;
@@ -587,6 +600,14 @@
             .btn {
                 padding: 8px 16px;
                 font-size: 0.8rem;
+            }
+            .button-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            .button-group .btn {
+                width: 100%;
+                margin: 0;
             }
             .section-title {
                 font-size: 1.3rem;
@@ -698,6 +719,8 @@
         <a href="#complaint">💬 Feedback</a>
         <a href="#contact">📞 Contact Us</a>
     </nav>
+    <!-- नई सिल्वर/गोल्डन लाइन -->
+    <div class="glowing-line"></div>
 </header>
 
 <section id="home">
@@ -792,7 +815,7 @@
 <section id="gallery" class="container">
     <h2 class="section-title">📸 Gallery ✨</h2>
     <div class="gallery-grid">
-        <img class="gallery-img" src="https://i.ibb.co/GfTBhKX6" alt="गैलरी फोटो 1">
+        <img class="gallery-img" src="https://lh3.googleusercontent.com/d/1CV9au8wTyXKySy19wetUSrovaG3GkpVH" alt="गैलरी फोटो 1">
         <img class="gallery-img" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="गैलरी फोटो 2">
         <img class="gallery-img" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="गैलरी फोटो 3">
         <img class="gallery-img" src="https://images.unsplash.com/photo-1591623960315-196c6ea6ece7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="गैलरी फोटो 4">
@@ -905,7 +928,7 @@
     // Google Apps Script Integration - Your Live URL
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzYqLNf4NmXnws5_VHiI9XAlNz4pFox2cCBceSch_Q5MSr4iaF2vHhIUbnknUk1k9BhOA/exec';
 
-    // Typing Animation (Single line only)
+    // Typing Animation
     const fullText = "✨ काशी लाइब्रेरी में आपका स्वागत है ✨";
     let charIndex = 0;
     const typingElement = document.getElementById("typingText");
@@ -924,34 +947,48 @@
         let name = document.getElementById('enqName').value;
         let mobile = document.getElementById('enqMobile').value;
         let shift = document.getElementById('enqShift').value;
+        const msgDiv = document.getElementById('enquiryMsg');
         
-        if(name && mobile) {
-            let msgDiv = document.getElementById('enquiryMsg');
-            msgDiv.style.display = 'block';
-            msgDiv.innerHTML = '📤 डाटा भेजा जा रहा है... कृपया प्रतीक्षा करें...';
+        if(!name || !mobile) {
+            alert('कृपया नाम और मोबाइल नंबर भरें 📱');
+            return;
+        }
+
+        msgDiv.style.display = 'block';
+        msgDiv.innerHTML = '📤 डाटा भेजा जा रहा है... कृपया प्रतीक्षा करें...';
+        msgDiv.style.background = '#e0f2fe';
+        msgDiv.style.color = '#1e3a5f';
+        
+        try {
+            const response = await fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    type: 'enquiry',
+                    name: name,
+                    mobile: mobile,
+                    shift: shift
+                })
+            });
             
-            try {
-                await fetch(WEB_APP_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        type: 'enquiry',
-                        name: name,
-                        mobile: mobile,
-                        shift: shift
-                    })
-                });
-                
+            const result = await response.json();
+            
+            if (result.success) {
                 msgDiv.innerHTML = `✅ धन्यवाद ${name}! आपकी पूछताछ सफलतापूर्वक दर्ज कर ली गई है। हम जल्द ही ${mobile} पर संपर्क करेंगे। 🙏✨`;
+                msgDiv.style.background = '#d1fae5';
+                msgDiv.style.color = '#065f46';
                 document.getElementById('enquiryForm').reset();
                 setTimeout(() => { msgDiv.style.display = 'none'; }, 6000);
-            } catch(error) {
-                msgDiv.innerHTML = '⚠️ कुछ गलत हो गया। कृपया पुनः प्रयास करें।';
-                console.error('Error:', error);
+            } else {
+                throw new Error(result.message || 'Unknown error');
             }
-        } else {
-            alert('कृपया नाम और मोबाइल नंबर भरें 📱');
+        } catch(error) {
+            console.error('Fetch Error:', error);
+            msgDiv.innerHTML = '⚠️ कुछ गलत हो गया। कृपया पुनः प्रयास करें या बाद में प्रयास करें।';
+            msgDiv.style.background = '#fee2e2';
+            msgDiv.style.color = '#991b1b';
+            setTimeout(() => { msgDiv.style.display = 'none'; }, 6000);
         }
     });
 
@@ -961,34 +998,48 @@
         let mob = document.getElementById('compMobile').value;
         let student = document.getElementById('studentName').value;
         let prob = document.getElementById('problem').value;
+        const msgDiv = document.getElementById('compMsg');
         
-        if(mob && student && prob) {
-            let msgDiv = document.getElementById('compMsg');
-            msgDiv.style.display = 'block';
-            msgDiv.innerHTML = '📤 शिकायत भेजी जा रही है...';
+        if(!mob || !student || !prob) {
+            alert('कृपया सभी फ़ील्ड भरें 📝');
+            return;
+        }
+
+        msgDiv.style.display = 'block';
+        msgDiv.innerHTML = '📤 शिकायत भेजी जा रही है...';
+        msgDiv.style.background = '#e0f2fe';
+        msgDiv.style.color = '#1e3a5f';
+        
+        try {
+            const response = await fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    type: 'feedback',
+                    mobile: mob,
+                    studentName: student,
+                    problem: prob
+                })
+            });
             
-            try {
-                await fetch(WEB_APP_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        type: 'feedback',
-                        mobile: mob,
-                        studentName: student,
-                        problem: prob
-                    })
-                });
-                
+            const result = await response.json();
+            
+            if (result.success) {
                 msgDiv.innerHTML = `✅ शिकायत/सुझाव सफलतापूर्वक दर्ज कर लिया गया है। हम 24 घंटे में समाधान हेतु संपर्क करेंगे। 💙`;
+                msgDiv.style.background = '#d1fae5';
+                msgDiv.style.color = '#065f46';
                 document.getElementById('complaintForm').reset();
                 setTimeout(() => { msgDiv.style.display = 'none'; }, 5000);
-            } catch(error) {
-                msgDiv.innerHTML = '⚠️ त्रुटि! कृपया बाद में प्रयास करें।';
-                console.error('Error:', error);
+            } else {
+                throw new Error(result.message || 'Unknown error');
             }
-        } else {
-            alert('कृपया सभी फ़ील्ड भरें 📝');
+        } catch(error) {
+            console.error('Fetch Error:', error);
+            msgDiv.innerHTML = '⚠️ त्रुटि! कृपया बाद में प्रयास करें।';
+            msgDiv.style.background = '#fee2e2';
+            msgDiv.style.color = '#991b1b';
+            setTimeout(() => { msgDiv.style.display = 'none'; }, 5000);
         }
     });
 </script>

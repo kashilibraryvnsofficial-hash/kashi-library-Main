@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>काशी लाइब्रेरी | वाराणसी की सर्वश्रेष्ठ लाइब्रेरी</title>
+    <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/11Due3G83RSPZm8hxscHVhK7L41ziSKUd">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e2e8f0 100%);
+            color: #1e3a5f;
+            scroll-behavior: smooth;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes blink {
+            0%, 100% { border-right-color: #38bdf8; }
+            50% { border-right-color: transparent; }
+        }
+        @keyframes leafSway {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        /* Desktop Layout (Default) */
+        header {
+            background: linear-gradient(135deg, #1e3a5f, #2c5282, #3182ce);
+            color: white;
+            padding: 1.2rem 2rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 6px 25px rgba(30,58,95,0.3);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .logo-img {
+            height: 75px;
+            width: auto;
+            background: white;
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+        .logo-text h2 {
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+        .logo-text h2 span {
+            display: inline-block;
+            animation: float 2s ease-in-out infinite;
+        }
+        .logo-text p {
+            font-size: 0.9rem;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+        .best-badge {
+            background: #38bdf8;
+            color: #1e3a5f;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 5px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.12);
+            letter-spacing: 0.5px;
+        }
+        nav a:hover {
+            background: #38bdf8;
+            color: #1e3a5f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f, #2c5282, #4a90e2, #94a3b8);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        .hero-content {
+            max-width: 800px;
+            background: rgba(0,0,0,0.3);
+            padding: 2rem;
+            border-radius: 30px;
+            backdrop-filter: blur(3px);
+        }
+        .typing-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            display: inline-block;
+            border-right: 3px solid #38bdf8;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: blink 0.7s step-end infinite;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+        .btn {
+            background: #38bdf8;
+            color: #1e3a5f;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #38bdf8;
+            color: #38bdf8;
+            margin-left: 1rem;
+        }
+        .btn:hover {
+            background: #0ea5e9;
+            transform: translateY(-3px);
+            color: white;
+        }
+        .btn-outline:hover {
+            background: #38bdf8;
+            color: #1e3a5f;
+        }
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            margin-left: 1rem;
+        }
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1e3a5f;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #38bdf8;
+            margin: 10px auto 0;
+            border-radius: 10px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(30,58,95,0.1);
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #bae6fd;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(30,58,95,0.15);
+            border-color: #38bdf8;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        .leaf-icon {
+            display: inline-block;
+            animation: leafSway 3s ease-in-out infinite;
+        }
+        .discount-badge {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+            border: 2px solid #38bdf8;
+        }
+        .gallery-img:hover {
+            transform: scale(1.02);
+        }
+        .form-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.8rem;
+            box-shadow: 0 15px 35px rgba(30,58,95,0.1);
+            margin-bottom: 2rem;
+            border: 1px solid #bae6fd;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #38bdf8;
+            border-radius: 40px;
+            font-size: 1rem;
+            background: #f8fafc;
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+            color: #1e3a5f;
+        }
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .form-row .form-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        .submit-btn {
+            background: #1e3a5f;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 250px;
+            display: block;
+            margin: 0 auto;
+        }
+        .submit-btn:hover {
+            background: #2c5282;
+            transform: scale(1.02);
+        }
+        .contact-highlight {
+            background: #f0f9ff;
+            border-radius: 30px;
+            padding: 1.2rem;
+            text-align: center;
+            margin: 1.5rem 0 1rem;
+            border: 2px solid #38bdf8;
+        }
+        .contact-highlight a {
+            color: #1e3a5f;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 280px;
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 30px;
+        }
+        .map-link {
+            flex: 1;
+            min-width: 280px;
+        }
+        .map-link iframe {
+            width: 100%;
+            height: 280px;
+            border-radius: 24px;
+            border: none;
+        }
+        footer {
+            background: linear-gradient(135deg, #1e3a5f, #2c5282);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        footer p {
+            margin: 8px 0;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+        .designer-credit {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .success-msg {
+            background: #d1fae5;
+            padding: 12px;
+            border-radius: 40px;
+            text-align: center;
+            margin-top: 12px;
+            color: #065f46;
+            font-weight: bold;
+        }
+        hr {
+            margin: 1rem 0;
+            border-color: #bae6fd;
+        }
+        .enquiry-note {
+            background: #e0f2fe;
+            padding: 12px;
+            border-radius: 50px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        .highlight-text {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+        .college-badge {
+            background: #38bdf8;
+            color: #1e3a5f;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .whatsapp-link {
+            background: #25D366;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .whatsapp-link:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+        }
+        .copyright-text {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* ======================================== */
+        /* TABLET STYLES (768px and below) */
+        /* ======================================== */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            .logo-img {
+                height: 55px;
+            }
+            .logo-text h2 {
+                font-size: 1.5rem;
+            }
+            .logo-text p {
+                font-size: 0.7rem;
+            }
+            nav a {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+                gap: 4px;
+            }
+            .typing-text {
+                font-size: 1.3rem;
+                white-space: normal;
+                border-right: none;
+            }
+            .hero {
+                min-height: 50vh;
+                padding: 1.5rem;
+            }
+            .hero-content {
+                padding: 1.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .btn-outline, .whatsapp-btn {
+                margin-left: 0;
+            }
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .button-group .btn {
+                width: 100%;
+                max-width: 280px;
+                margin: 5px 0;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.2rem;
+            }
+            .feature-card {
+                padding: 1.2rem;
+            }
+            .feature-icon {
+                font-size: 2rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+            .gallery-img {
+                height: 180px;
+            }
+            .form-card {
+                padding: 1.2rem;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+            .contact-info {
+                padding: 1.2rem;
+            }
+            .map-link iframe {
+                height: 220px;
+            }
+            footer {
+                padding: 1.5rem;
+            }
+            footer p {
+                font-size: 0.8rem;
+            }
+            .submit-btn {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* ======================================== */
+        /* MOBILE STYLES (480px and below) */
+        /* ======================================== */
+        @media (max-width: 480px) {
+            header {
+                padding: 0.8rem;
+            }
+            .logo-container {
+                gap: 10px;
+            }
+            .logo-img {
+                height: 45px;
+                padding: 4px;
+            }
+            .logo-text h2 {
+                font-size: 1.2rem;
+            }
+            .logo-text p {
+                font-size: 0.6rem;
+            }
+            .best-badge {
+                font-size: 0.6rem;
+                padding: 2px 8px;
+            }
+            nav {
+                gap: 0.4rem;
+            }
+            nav a {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+                gap: 3px;
+            }
+            .typing-text {
+                font-size: 1rem;
+            }
+            .hero {
+                min-height: 45vh;
+                padding: 1rem;
+            }
+            .hero-content {
+                padding: 1rem;
+            }
+            .hero p {
+                font-size: 0.85rem;
+            }
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .section-title:after {
+                width: 50px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .feature-card {
+                padding: 1rem;
+            }
+            .feature-card h3 {
+                font-size: 1.1rem;
+            }
+            .feature-card p {
+                font-size: 0.85rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-img {
+                height: 200px;
+            }
+            .form-card {
+                padding: 1rem;
+            }
+            .form-group {
+                margin-bottom: 0.8rem;
+            }
+            input, select, textarea {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+            label {
+                font-size: 0.9rem;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .contact-highlight {
+                padding: 1rem;
+            }
+            .contact-highlight p {
+                font-size: 0.85rem;
+            }
+            .contact-highlight a {
+                font-size: 0.85rem;
+            }
+            .contact-info {
+                padding: 1rem;
+            }
+            .contact-info h3 {
+                font-size: 1.1rem;
+            }
+            .contact-info p {
+                font-size: 0.85rem;
+            }
+            .map-link iframe {
+                height: 200px;
+            }
+            footer {
+                padding: 1rem;
+            }
+            footer p {
+                font-size: 0.7rem;
+            }
+            .designer-credit {
+                font-size: 0.7rem;
+            }
+            .enquiry-note {
+                font-size: 0.8rem;
+                padding: 8px;
+            }
+            .whatsapp-link {
+                padding: 6px 14px;
+                font-size: 0.8rem;
+            }
+            .college-badge {
+                font-size: 0.7rem;
+                padding: 4px 10px;
+            }
+            .success-msg {
+                font-size: 0.85rem;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img class="logo-img" src="https://lh3.googleusercontent.com/d/11Due3G83RSPZm8hxscHVhK7L41ziSKUd" alt="काशी लाइब्रेरी लोगो">
+        <div class="logo-text">
+            <h2>📖 <span>काशी लाइब्रेरी</span> ✨</h2>
+            <p>ज्ञान का प्राचीन केंद्र | वाराणसी</p>
+            <div class="best-badge">🏆 वाराणसी की सर्वश्रेष्ठ लाइब्रेरी 🏆</div>
+        </div>
+    </div>
+    <nav>
+        <a href="#home">🏠 होम</a>
+        <a href="#about">ℹ️ About Us</a>
+        <a href="#gallery">📸 Gallery</a>
+        <a href="#enquiry">📝 Enquiry</a>
+        <a href="#complaint">💬 Feedback</a>
+        <a href="#contact">📞 Contact Us</a>
+    </nav>
+</header>
+
+<section id="home">
+    <div class="hero">
+        <div class="hero-content">
+            <h1><span class="typing-text" id="typingText"></span></h1>
+            <p>🌈 वाराणसी की सबसे शांत और हरियाली से भरी लाइब्रेरी। सड़क से दूर, प्राकृतिक वातावरण में पढ़ाई का अनोखा अनुभव। 40+ बैठने की क्षमता, स्टडी टेबल, समूह चर्चा कक्ष, CCTV सुरक्षा, हरियाली वाला गार्डन, निःशुल्क समाचार पत्र, करेंट अफेयर्स, UPSC, NCERT, ई-बुक्स, प्रिंट सुविधा और हाइजीनिक बाथरूम।</p>
+            <div class="button-group">
+                <a href="#enquiry" class="btn">📝 पूछताछ / Enquiry करें</a>
+                <a href="https://kashilibraryvnsofficial-hash.github.io/kashi-library/" target="_blank" class="btn btn-outline">🔗 सीट बुकिंग पोर्टल</a>
+                <a href="https://wa.me/9194140167" target="_blank" class="btn whatsapp-btn">📱 WhatsApp पर संपर्क करें</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="title-wrap">
+            <h2 class="section-title">💙 हमारा विज़न 💙</h2>
+        </div>
+        <div style="text-align: center; max-width: 800px; margin: auto; font-size: 1rem; line-height: 1.6;">
+            <p>🌟 काशी लाइब्रेरी का उद्देश्य वाराणसी के छात्रों व शोधार्थियों को एक सुलभ, तकनीक-संचालित और प्रेरणादायक वातावरण प्रदान करना है। यहाँ हम न केवल किताबें, बल्कि निःशुल्क करेंट अफेयर्स, NCERT, UPSC सामग्री, ई-बुक्स, प्रिंट आउट व फॉर्म भरने की सुविधा भी देते हैं। 🚀</p>
+            <br>
+            <p><strong>🎯 हमारा लक्ष्य :</strong> "हर विद्यार्थी तक सुलभ संसाधन, आधुनिक सुविधाओं के साथ"</p>
+            <div class="college-badge">🏛️ संचालक : संतराम सर, काशी कृषक इंटर कॉलेज, हरहुआ, वाराणसी</div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="container">
+    <h2 class="section-title">💎 About Us & सुविधाएँ 💎</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🪑✨</div>
+            <h3>40+ बैठने की क्षमता</h3>
+            <p>व्यक्तिगत स्टडी टेबल, समूह चर्चा कक्ष, आरामदायक कुर्सियाँ।</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📰⚡</div>
+            <h3>समाचार पत्र एवं पत्रिकाएँ</h3>
+            <p>निःशुल्क, स्पीडी, करेंट अफेयर्स, UPSC, सभी NCERT एवं प्रतियोगी परीक्षाओं की सामग्री।</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📚🖨️</div>
+            <h3>ई-बुक्स, प्रिंट आउट & फॉर्म सुविधा</h3>
+            <p>डिजिटल ई-बुक्स, किसी भी दस्तावेज़ का प्रिंट आउट, साथ ही ऑनलाइन फॉर्म भरने की सुविधा।</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">👩‍🎓💝</div>
+            <h3>लेडीज स्पेशल डिस्काउंट</h3>
+            <p>🎀 <span class="highlight-text">छात्राओं के लिए 15% तक की छूट</span> 🎀</p>
+            <div class="discount-badge">✨ Girls Special Offer ✨</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🚻🧼</div>
+            <h3>हाइजीनिक बाथरूम</h3>
+            <p>स्वच्छ, आधुनिक और नियमित रूप से साफ किए जाने वाले बाथरूम की सुविधा।</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📶🌐</div>
+            <h3>हाई-स्पीड वाई-फाई</h3>
+            <p>पूरे परिसर में फाइबर नेटवर्क, निःशुल्क इंटरनेट सुविधा।</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤫📖</div>
+            <h3>शांत वाचनालय</h3>
+            <p>AC युक्त, ध्वनिरोधी क्षेत्र, पूर्ण एकाग्रता के लिए उपयुक्त।</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📹🔒</div>
+            <h3>CCTV सुरक्षा</h3>
+            <p>24x7 हाई-टेक CCTV निगरानी, पूरी तरह से सुरक्षित वातावरण।</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><span class="leaf-icon">🌿🌱🍃</span></div>
+            <h3>हरियाली वाला गार्डन (5 पॉड)</h3>
+            <p>5 पॉड के साथ हरा-भरा गार्डन, प्रकृति के बीच पढ़ाई का अनोखा अनुभव।</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🚗💨</div>
+            <h3>सड़क से दूर शांत वातावरण</h3>
+            <p>शोरगुल से दूर, एकदम शांत और एकाग्रता बढ़ाने वाला माहौल।</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏆📚</div>
+            <h3>वाराणसी की सर्वश्रेष्ठ लाइब्रेरी</h3>
+            <p>छात्रों के रेटिंग और अनुभव के आधार पर वाराणसी की नंबर 1 लाइब्रेरी।</p>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY SECTION - 8 PHOTOS -->
+<section id="gallery" class="container">
+    <h2 class="section-title">📸 Gallery ✨</h2>
+    <div class="gallery-grid">
+        <img class="gallery-img" src="https://lh3.googleusercontent.com/d/1CV9au8wTyXKySy19wetUSrovaG3GkpVH" alt="गैलरी फोटो 1">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="गैलरी फोटो 2">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="गैलरी फोटो 3">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1591623960315-196c6ea6ece7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="गैलरी फोटो 4">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="गैलरी फोटो 5">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="गैलरी फोटो 6">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="गैलरी फोटो 7">
+        <img class="gallery-img" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="गैलरी फोटो 8">
+    </div>
+    <p style="text-align: center; margin-top: 1rem; color: #1e3a5f; background: #e0f2fe; display: inline-block; width: auto; margin-left: auto; margin-right: auto; padding: 8px 16px; border-radius: 50px;">
+        ⭐ Google Drive पर फोटो अपलोड करके उपरोक्त लिंक Replace करें ⭐
+    </p>
+</section>
+
+<section id="enquiry" class="container">
+    <h2 class="section-title">📋 पूछताछ फॉर्म 💬</h2>
+    <div class="form-card">
+        <div class="enquiry-note">
+            💡 <strong>नोट :</strong> सीट बुकिंग या सदस्यता के लिए कृपया <strong>9194140167</strong> पर कॉल करें या <a href="https://wa.me/9194140167" style="color:#25D366; font-weight:bold;">WhatsApp 📱</a> करें।
+        </div>
+        <form id="enquiryForm">
+            <div class="form-group">
+                <label>✨ पूरा नाम * ✨</label>
+                <input type="text" id="enqName" required placeholder="जैसे: राहुल शर्मा">
+            </div>
+            <div class="form-group">
+                <label>📱 मोबाइल नंबर *</label>
+                <input type="tel" id="enqMobile" required placeholder="10 अंकों का मोबाइल नंबर">
+            </div>
+            <div class="form-group">
+                <label>⏰ शिफ्ट चुनें (वैकल्पिक)</label>
+                <select id="enqShift">
+                    <option value="">-- कोई शिफ्ट नहीं --</option>
+                    <option>🌅 मॉर्निंग (6:00-12:00)</option>
+                    <option>☀️ आफ्टरनून (12:00-18:00)</option>
+                    <option>🌙 ईवनिंग (18:00-23:00)</option>
+                    <option>🌟 फुल डे (6:00-23:00)</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">📨 पूछताछ भेजें 💫</button>
+            <div id="enquiryMsg" class="success-msg" style="display:none;"></div>
+        </form>
+        <hr>
+        <div style="text-align: center;">
+            <p>📞 <strong>तत्काल सहायता के लिए सीधे संपर्क करें:</strong></p>
+            <p style="font-size: 1.2rem; margin: 8px 0;">
+                <a href="tel:9194140167">📱 9194140167</a> &nbsp;|&nbsp; 
+                <a href="mailto:kashilibraryvnsofficial@gmail.com">✉️ kashilibraryvnsofficial@gmail.com</a>
+            </p>
+            <a href="https://wa.me/9194140167" target="_blank" class="whatsapp-link">📲 WhatsApp पर मैसेज भेजें</a>
+        </div>
+    </div>
+</section>
+
+<section id="complaint" class="container">
+    <h2 class="section-title">📢 Complaint / Feedback Box 💭</h2>
+    <div class="form-card">
+        <form id="complaintForm">
+            <div class="form-row">
+                <div class="form-group"><label>📱 मोबाइल नंबर *</label><input type="tel" id="compMobile" required></div>
+                <div class="form-group"><label>👤 छात्र का नाम *</label><input type="text" id="studentName" required></div>
+            </div>
+            <div class="form-group"><label>💬 अपनी समस्या / सुझाव लिखें *</label><textarea rows="3" id="problem" placeholder="जैसे: सीट रिजर्वेशन, प्रिंट सुविधा, कोई सुझाव..." required></textarea></div>
+            <button type="submit" class="submit-btn">✉️ शिकायत दर्ज करें 📝</button>
+            <div id="compMsg" class="success-msg" style="display:none;"></div>
+        </form>
+    </div>
+</section>
+
+<section id="contact" class="container">
+    <h2 class="section-title">📍 संपर्क करें 💙</h2>
+    <div class="contact-highlight">
+        <p>📌 <strong>ईमेल :</strong> <a href="mailto:kashilibraryvnsofficial@gmail.com">kashilibraryvnsofficial@gmail.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
+        📞 <strong>मोबाइल :</strong> <a href="tel:9194140167">9194140167</a> (कॉल या <a href="https://wa.me/9194140167" style="color:#25D366;">WhatsApp</a>) 📱</p>
+        <a href="https://wa.me/9194140167" target="_blank" class="whatsapp-link" style="margin-top:8px;">📲 WhatsApp पर संपर्क करें</a>
+    </div>
+    <div class="contact-row">
+        <div class="contact-info">
+            <h3>🏛️ काशी लाइब्रेरी, वाराणसी</h3>
+            <p>🏠 <strong>पता:</strong> हरहुआ, वाराणसी, उत्तर प्रदेश - 221105</p>
+            <p>📞 <strong>प्रशासनिक कार्यालय:</strong> 9194140167</p>
+            <p>✉️ <strong>ईमेल:</strong> kashilibraryvnsofficial@gmail.com</p>
+            <p>🕒 <strong>समय:</strong> सुबह 6:00 बजे – रात 11:00 बजे (सप्ताह के सभी दिन)</p>
+            <p><strong>🔗 सीट बुकिंग पोर्टल:</strong> <a href="https://kashilibraryvnsofficial-hash.github.io/kashi-library/" target="_blank">https://kashilibraryvnsofficial-hash.github.io/kashi-library/</a></p>
+            <p><strong>🏫 संचालक :</strong> संतराम सर, काशी कृषक इंटर कॉलेज, हरहुआ, वाराणसी</p>
+            <a href="https://wa.me/9194140167" target="_blank" class="whatsapp-link" style="display:inline-block; margin-top:8px;">📲 WhatsApp Direct</a>
+        </div>
+        <div class="map-link">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.123456789012!2d82.98765432101234!3d25.345678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDIwJzQ0LjQiTiA4MsKwNTknMTUuNiJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <p style="margin-top: 6px;">
+                <a href="https://maps.app.goo.gl/yryzwyivvYRkf1qT7" target="_blank">🗺️ गूगल मैप पर सटीक लोकेशन देखें</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>💙 © 2025-2026 काशी लाइब्रेरी | वाराणसी की सर्वश्रेष्ठ लाइब्रेरी 💙</p>
+    <p class="copyright-text">📜 Copyright Condition : All Rights Reserved. यह वेबसाइट और इसकी सभी सामग्री काशी लाइब्रेरी की संपत्ति है। बिना अनुमति के किसी भी सामग्री का उपयोग प्रतिबंधित है।</p>
+    <p>✨ 40+ सीटें | व्यक्तिगत टेबल | समूह चर्चा | CCTV | हरियाली गार्डन | शांत वातावरण ✨</p>
+    <p>👩‍🎓 लेडीज के लिए 15% तक की छूट | 🚻 हाइजीनिक बाथरूम की सुविधा</p>
+    <p>📞 पूछताछ के लिए 9194140167 / kashilibraryvnsofficial@gmail.com | <a href="https://wa.me/9194140167" style="color:#38bdf8;">WhatsApp 📲</a> 💌</p>
+    <p>🏫 संचालक : संतराम सर, काशी कृषक इंटर कॉलेज, हरहुआ, वाराणसी</p>
+    <div class="designer-credit">
+        🌟 Website designed by <strong>Anurag</strong> 🌟
+    </div>
+    <p style="margin-top: 8px; font-size: 0.7rem;">⭐ FOCUS LIVES HERE | शांति • सुरक्षा • हरियाली • सम्मान • सहयोग ⭐</p>
+</footer>
+
+<script>
+    // Google Apps Script Integration - Your Live URL
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzYqLNf4NmXnws5_VHiI9XAlNz4pFox2cCBceSch_Q5MSr4iaF2vHhIUbnknUk1k9BhOA/exec';
+
+    // Typing Animation (Single line only)
+    const fullText = "✨ काशी लाइब्रेरी में आपका स्वागत है ✨";
+    let charIndex = 0;
+    const typingElement = document.getElementById("typingText");
+    function typeEffect() {
+        if (charIndex <= fullText.length) {
+            typingElement.textContent = fullText.substring(0, charIndex);
+            charIndex++;
+            setTimeout(typeEffect, 80);
+        }
+    }
+    typeEffect();
+
+    // Enquiry Form - Sends data to Google Sheet
+    document.getElementById('enquiryForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        let name = document.getElementById('enqName').value;
+        let mobile = document.getElementById('enqMobile').value;
+        let shift = document.getElementById('enqShift').value;
+        
+        if(name && mobile) {
+            let msgDiv = document.getElementById('enquiryMsg');
+            msgDiv.style.display = 'block';
+            msgDiv.innerHTML = '📤 डाटा भेजा जा रहा है... कृपया प्रतीक्षा करें...';
+            
+            try {
+                await fetch(WEB_APP_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'enquiry',
+                        name: name,
+                        mobile: mobile,
+                        shift: shift
+                    })
+                });
+                
+                msgDiv.innerHTML = `✅ धन्यवाद ${name}! आपकी पूछताछ सफलतापूर्वक दर्ज कर ली गई है। हम जल्द ही ${mobile} पर संपर्क करेंगे। 🙏✨`;
+                document.getElementById('enquiryForm').reset();
+                setTimeout(() => { msgDiv.style.display = 'none'; }, 6000);
+            } catch(error) {
+                msgDiv.innerHTML = '⚠️ कुछ गलत हो गया। कृपया पुनः प्रयास करें।';
+                console.error('Error:', error);
+            }
+        } else {
+            alert('कृपया नाम और मोबाइल नंबर भरें 📱');
+        }
+    });
+
+    // Complaint/Feedback Form - Sends data to Google Sheet
+    document.getElementById('complaintForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        let mob = document.getElementById('compMobile').value;
+        let student = document.getElementById('studentName').value;
+        let prob = document.getElementById('problem').value;
+        
+        if(mob && student && prob) {
+            let msgDiv = document.getElementById('compMsg');
+            msgDiv.style.display = 'block';
+            msgDiv.innerHTML = '📤 शिकायत भेजी जा रही है...';
+            
+            try {
+                await fetch(WEB_APP_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        type: 'feedback',
+                        mobile: mob,
+                        studentName: student,
+                        problem: prob
+                    })
+                });
+                
+                msgDiv.innerHTML = `✅ शिकायत/सुझाव सफलतापूर्वक दर्ज कर लिया गया है। हम 24 घंटे में समाधान हेतु संपर्क करेंगे। 💙`;
+                document.getElementById('complaintForm').reset();
+                setTimeout(() => { msgDiv.style.display = 'none'; }, 5000);
+            } catch(error) {
+                msgDiv.innerHTML = '⚠️ त्रुटि! कृपया बाद में प्रयास करें।';
+                console.error('Error:', error);
+            }
+        } else {
+            alert('कृपया सभी फ़ील्ड भरें 📝');
+        }
+    });
+</script>
+</body>
+</html>
